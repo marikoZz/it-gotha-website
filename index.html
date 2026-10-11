@@ -262,6 +262,7 @@
   .js .handy-anruf { transform: translateY(160%); visibility: hidden; transition: transform .25s ease, visibility 0s linear .25s; }
   .js .handy-anruf.sichtbar { transform: none; visibility: visible; transition: transform .25s ease; }
   @media (prefers-reduced-motion: reduce) { .js .handy-anruf, .js .handy-anruf.sichtbar { transition: none; } }
+  .handy-anruf.rueckruf-modus svg { display: none; }
 </style>
 </head>
 <body>
@@ -412,7 +413,7 @@
 
 <a class="handy-anruf" href="tel:+4915129880857" aria-label="Jetzt anrufen: 01512 9880857">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
-  Jetzt anrufen
+  <span class="handy-text">Jetzt anrufen</span>
 </a>
 
 <script>
@@ -420,6 +421,34 @@
     var karte = document.querySelector('.anruf');
     var knopf = document.querySelector('.handy-anruf');
     if (!knopf) return;
+
+    // Außerhalb der Erreichbarkeit (Mo–Fr 9–18, Sa 10–15 Uhr, deutsche Zeit) Rückruf statt Anruf anbieten
+    function erreichbar() {
+      try {
+        var teile = new Intl.DateTimeFormat('en-US', { timeZone: 'Europe/Berlin', weekday: 'short', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(new Date());
+        var w = {}; teile.forEach(function (t) { w[t.type] = t.value; });
+        var min = parseInt(w.hour, 10) * 60 + parseInt(w.minute, 10);
+        if (['Mon', 'Tue', 'Wed', 'Thu', 'Fri'].indexOf(w.weekday) > -1) return min >= 540 && min < 1080;
+        if (w.weekday === 'Sat') return min >= 600 && min < 900;
+        return false;
+      } catch (err) { return true; }
+    }
+    function modusSetzen() {
+      var text = knopf.querySelector('.handy-text');
+      if (erreichbar()) {
+        knopf.href = 'tel:+4915129880857';
+        knopf.setAttribute('aria-label', 'Jetzt anrufen: 01512 9880857');
+        text.textContent = 'Jetzt anrufen';
+        knopf.classList.remove('rueckruf-modus');
+      } else {
+        knopf.href = '#rueckruf';
+        knopf.setAttribute('aria-label', 'Rückruf vereinbaren');
+        text.textContent = 'Rückruf vereinbaren';
+        knopf.classList.add('rueckruf-modus');
+      }
+    }
+    modusSetzen();
+    setInterval(modusSetzen, 60000);
     if (!karte || !('IntersectionObserver' in window)) { knopf.classList.add('sichtbar'); return; }
     new IntersectionObserver(function (eintraege) {
       var e = eintraege[0];
