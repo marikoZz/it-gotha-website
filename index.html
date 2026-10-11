@@ -9,7 +9,7 @@
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="theme-color" content="#1d4a3c">
+<meta name="theme-color" content="#0b3fa8">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Marius Lange IT-Services">
@@ -49,14 +49,14 @@
 <style>
   /* Keine externen Schriften oder Skripte: lädt nichts von Drittanbietern (DSGVO-freundlich). */
   :root {
-    --tanne: #1d4a3c;      /* Hauptfarbe: tiefes Waldgrün */
-    --tanne-hell: #e4ede8; /* Flächen */
-    --gelb: #f5c83b;       /* Anruf-Fläche */
-    --gelb-tief: #e2b21f;
-    --tinte: #18221e;      /* Text */
-    --grau: #4b5953;       /* Nebentext */
-    --papier: #f8f9f7;     /* Hintergrund */
-    --linie: #cfd9d3;
+    --blau: #0b3fa8;      /* Hauptfarbe: Kobaltblau */
+    --blau-hell: #e6ecfb; /* Flächen */
+    --gold: #ffc94a;       /* Akzent: Gold, Anruf-Fläche */
+    --gold-tief: #f2b62a;
+    --tinte: #10183a;      /* Text */
+    --grau: #4a5470;       /* Nebentext */
+    --papier: #f7f9fd;     /* Hintergrund */
+    --linie: #d5ddee;
     --maxw: 68rem;
     --text: 40rem;
   }
@@ -70,7 +70,7 @@
     font-family: "Segoe UI", "Helvetica Neue", Helvetica, Roboto, Arial, system-ui, sans-serif;
     line-height: 1.6;
   }
-  a { color: var(--tanne); text-underline-offset: .18em; }
+  a { color: var(--blau); text-underline-offset: .18em; }
   a:focus-visible, button:focus-visible {
     outline: 3px solid var(--tinte);
     outline-offset: 3px;
@@ -85,9 +85,9 @@
     display: flex; align-items: center; justify-content: space-between;
     gap: 1rem; min-height: 4rem; flex-wrap: wrap; padding-block: .5rem;
   }
-  .marke { font-weight: 700; font-size: 1.05rem; color: var(--tinte); text-decoration: none; letter-spacing: -.01em; }
-  .marke span { color: var(--tanne); }
-  .kopf-tel { font-weight: 700; color: var(--tanne); text-decoration: none; white-space: nowrap; }
+  .marke { font-weight: 700; font-size: 1.05rem; color: var(--tinte); text-decoration: none; letter-spacing: -.01em; display: inline-flex; align-items: center; gap: .55rem; }
+  .marke span span { color: var(--blau); }
+  .kopf-tel { font-weight: 700; color: var(--blau); text-decoration: none; white-space: nowrap; }
   .kopf-tel:hover { text-decoration: underline; }
 
   /* Einstieg */
@@ -107,7 +107,7 @@
 
   /* Die Anruf-Karte: das eine auffällige Element der Seite */
   .anruf {
-    background: var(--gelb);
+    background: var(--gold);
     border-radius: 1.25rem 1.25rem 1.25rem .25rem;
     padding: 1.75rem 1.75rem 1.5rem;
     color: var(--tinte);
@@ -129,7 +129,7 @@
   .anruf dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: .1rem 1rem; font-size: .95rem; }
   .anruf dt { font-weight: 700; }
   .anruf dd { margin: 0; }
-  .anruf .hinweis { margin: 1rem 0 0; font-size: .9rem; border-top: 1px solid rgba(24,34,30,.25); padding-top: .8rem; }
+  .anruf .hinweis { margin: 1rem 0 0; font-size: .9rem; border-top: 1px solid rgba(16,24,58,.25); padding-top: .8rem; }
 
   /* Abschnitte */
   section.block { padding: 3.5rem 0; border-top: 1px solid var(--linie); }
@@ -150,19 +150,19 @@
   }
   .situationen li::before {
     content: ""; position: absolute; left: 0; top: 1.35rem;
-    width: .45rem; height: .45rem; border-radius: 50%; background: var(--tanne);
+    width: .45rem; height: .45rem; border-radius: 50%; background: var(--blau);
   }
   .situationen strong { display: block; }
   .situationen span { color: var(--grau); font-size: .95rem; }
 
   /* Unternehmen */
-  .firma { background: var(--tanne); color: #fff; border-top: 0; }
-  .firma .lead { color: #c9dbd2; }
+  .firma { background: var(--blau); color: #fff; border-top: 0; }
+  .firma .lead { color: #c9d6f5; }
   .firma-liste { display: grid; gap: 1.5rem 3rem; margin: 0; }
   @media (min-width: 48rem) { .firma-liste { grid-template-columns: 1fr 1fr; } }
   .firma-liste div { border-top: 2px solid rgba(255,255,255,.35); padding-top: .9rem; }
   .firma-liste dt { font-weight: 700; font-size: 1.1rem; margin-bottom: .2rem; }
-  .firma-liste dd { margin: 0; color: #dbe7e1; }
+  .firma-liste dd { margin: 0; color: #dde6fb; }
 
   /* Ablauf: echte Reihenfolge, deshalb nummeriert */
   .ablauf { list-style: none; counter-reset: schritt; padding: 0; margin: 0; display: grid; gap: 1.75rem; }
@@ -172,7 +172,7 @@
     content: counter(schritt);
     display: inline-grid; place-items: center;
     width: 2.4rem; height: 2.4rem; border-radius: 50%;
-    background: var(--tanne-hell); color: var(--tanne);
+    background: var(--blau-hell); color: var(--blau);
     font-weight: 700; margin-bottom: .75rem;
   }
   .ablauf h3 { margin: 0 0 .35rem; font-size: 1.15rem; }
@@ -182,7 +182,7 @@
   .person { display: grid; gap: 2rem; align-items: center; }
   @media (min-width: 48rem) { .person { grid-template-columns: 14rem 1fr; gap: 3rem; } }
   .foto {
-    aspect-ratio: 4 / 5; border-radius: 1rem; background: var(--tanne-hell);
+    aspect-ratio: 4 / 5; border-radius: 1rem; background: var(--blau-hell);
     display: grid; place-items: center; color: var(--grau); font-size: .9rem;
     text-align: center; padding: 1rem; max-width: 14rem;
     border: 2px dashed var(--linie);
@@ -214,33 +214,33 @@
     padding: .75rem .9rem; border: 2px solid var(--linie); border-radius: .6rem; background: #fff;
   }
   .formular textarea { min-height: 6.5rem; resize: vertical; }
-  .formular input:focus, .formular textarea:focus { outline: none; border-color: var(--tanne); box-shadow: 0 0 0 3px var(--tanne-hell); }
+  .formular input:focus, .formular textarea:focus { outline: none; border-color: var(--blau); box-shadow: 0 0 0 3px var(--blau-hell); }
   .formular fieldset { border: 0; padding: 0; margin: 0; }
   .formular legend { font-weight: 700; margin-bottom: .5rem; padding: 0; }
   .zeiten { display: flex; flex-wrap: wrap; gap: .6rem; }
   .zeiten label { font-weight: 400; margin: 0; display: flex; align-items: center; gap: .5rem;
     border: 2px solid var(--linie); border-radius: 999px; padding: .5rem 1rem; background: #fff; cursor: pointer; }
-  .zeiten input { width: 1.15rem; height: 1.15rem; accent-color: var(--tanne); margin: 0; }
-  .zeiten label:has(input:checked) { border-color: var(--tanne); background: var(--tanne-hell); }
+  .zeiten input { width: 1.15rem; height: 1.15rem; accent-color: var(--blau); margin: 0; }
+  .zeiten label:has(input:checked) { border-color: var(--blau); background: var(--blau-hell); }
   .zeiten label:has(input:focus-visible) { outline: 3px solid var(--tinte); outline-offset: 2px; }
   .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
   .absenden {
     justify-self: start; font: inherit; font-weight: 700; cursor: pointer;
-    background: var(--tanne); color: #fff; border: 0; border-radius: 999px; padding: .85rem 1.6rem;
+    background: var(--blau); color: #fff; border: 0; border-radius: 999px; padding: .85rem 1.6rem;
   }
-  .absenden:hover { background: #163a2f; }
+  .absenden:hover { background: #08328a; }
   .formular .klein { font-size: .85rem; color: var(--grau); margin: 0; }
 
   /* Fester Anruf-Knopf auf dem Handy */
   .handy-anruf {
     position: fixed; left: 1rem; right: 1rem; bottom: 1rem;
     display: flex; justify-content: center; align-items: center; gap: .6rem;
-    background: var(--gelb); color: var(--tinte);
+    background: var(--gold); color: var(--tinte);
     font-weight: 700; font-size: 1.1rem; text-decoration: none;
     padding: 1rem; border-radius: 999px;
-    box-shadow: 0 6px 18px rgba(24,34,30,.25);
+    box-shadow: 0 6px 18px rgba(16,24,58,.25);
   }
-  .handy-anruf:active { background: var(--gelb-tief); }
+  .handy-anruf:active { background: var(--gold-tief); }
   .handy-anruf svg { width: 1.3rem; height: 1.3rem; }
   @media (min-width: 48rem) { .handy-anruf { display: none; } }
 </style>
@@ -249,7 +249,7 @@
 
 <header class="kopf">
   <div class="wrap">
-    <a class="marke" href="/">Marius Lange <span>IT-Services</span></a>
+    <a class="marke" href="/"><img src="/favicon.svg" width="30" height="30" alt=""><span>Marius Lange <span>IT-Services</span></span></a>
     <a class="kopf-tel" href="tel:+4915129880857">01512 9880857</a>
   </div>
 </header>
