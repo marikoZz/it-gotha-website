@@ -2,6 +2,7 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
+<script>document.documentElement.classList.add('js');</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Marius Lange IT-Services – Technikhilfe in Gotha und Umgebung</title>
 <meta name="description" content="Persönliche Hilfe bei Computer, Smartphone, Drucker, Kameras und WLAN in Gotha und Umgebung – in Ruhe und Schritt für Schritt. IT-Betreuung und individuelle Software für kleine Unternehmen.">
@@ -257,6 +258,10 @@
   .handy-anruf:active { background: var(--gold-tief); }
   .handy-anruf svg { width: 1.3rem; height: 1.3rem; }
   @media (min-width: 48rem) { .handy-anruf { display: none; } }
+  /* Mit JavaScript erscheint der Knopf erst, wenn die gelbe Karte aus dem Bild gescrollt ist */
+  .js .handy-anruf { transform: translateY(160%); visibility: hidden; transition: transform .25s ease, visibility 0s linear .25s; }
+  .js .handy-anruf.sichtbar { transform: none; visibility: visible; transition: transform .25s ease; }
+  @media (prefers-reduced-motion: reduce) { .js .handy-anruf, .js .handy-anruf.sichtbar { transition: none; } }
 </style>
 </head>
 <body>
@@ -410,5 +415,17 @@
   Jetzt anrufen
 </a>
 
+<script>
+  (function () {
+    var karte = document.querySelector('.anruf');
+    var knopf = document.querySelector('.handy-anruf');
+    if (!knopf) return;
+    if (!karte || !('IntersectionObserver' in window)) { knopf.classList.add('sichtbar'); return; }
+    new IntersectionObserver(function (eintraege) {
+      var e = eintraege[0];
+      knopf.classList.toggle('sichtbar', !e.isIntersecting && e.boundingClientRect.top < 0);
+    }).observe(karte);
+  })();
+</script>
 </body>
 </html>
