@@ -3,45 +3,67 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Seite nicht gefunden – Marius Lange IT-Services</title>
+<title>Marius Lange IT-Services – Website im Aufbau</title>
 <meta name="robots" content="noindex">
+<meta name="description" content="Marius Lange IT-Services in Gotha und Umgebung. Die Website entsteht gerade – erreichbar bin ich trotzdem schon.">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0b3fa8">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:title" content="Marius Lange IT-Services">
+<meta property="og:description" content="Die Website entsteht gerade – erreichbar bin ich trotzdem schon.">
+<meta property="og:image" content="https://www.it-gotha.de/og-bild.png">
 <style>
-  :root { --blau:#0b3fa8; --gold:#ffc94a; --tinte:#10183a; --grau:#4a5470; --papier:#f7f9fd; --linie:#d5ddee; }
+  :root { --blau:#0b3fa8; --gold:#ffc94a; --hell:#c9d6f5; }
   * { box-sizing: border-box; }
   html { font-size: 112.5%; -webkit-text-size-adjust: 100%; }
   @media (min-width: 48rem) { html { font-size: 125%; } }
-  body { margin:0; min-height:100vh; display:flex; flex-direction:column; background:var(--papier); color:var(--tinte); line-height:1.6;
-    font-family:"Segoe UI","Helvetica Neue",Helvetica,Roboto,Arial,system-ui,sans-serif; }
-  a { color:var(--blau); text-underline-offset:.18em; }
-  a:focus-visible { outline:3px solid var(--tinte); outline-offset:3px; border-radius:4px; }
-  .wrap { max-width:40rem; margin:0 auto; padding:0 1rem; width:100%; }
-  .kopf { border-bottom:1px solid rgba(255,255,255,.14); background:var(--blau); }
-  .kopf .wrap { max-width:68rem; display:flex; align-items:center; min-height:4rem; }
-  .marke { font-weight:700; font-size:1.05rem; color:#fff; text-decoration:none; display:inline-flex; align-items:center; gap:.55rem; }
-  .marke span span { color:var(--gold); }
-  .marke img { border-radius:7px; box-shadow:0 0 0 2px rgba(255,255,255,.35); }
-  .kopf a:focus-visible { outline-color:#fff; }
-  main { flex:1; display:flex; align-items:center; padding:4rem 0; }
-  h1 { font-size:clamp(1.8rem,4.5vw,2.6rem); letter-spacing:-.02em; line-height:1.15; margin:0 0 1rem; }
-  p { margin:0 0 1.75rem; color:var(--grau); max-width:32em; }
-  .knopf { display:inline-block; background:var(--blau); color:#fff; font-weight:700; text-decoration:none;
-    padding:.8rem 1.4rem; border-radius:999px; margin:0 1rem 1rem 0; }
-  .knopf:hover { background:#08328a; }
-  .tel { font-weight:700; }
+  body {
+    margin: 0; min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column;
+    background: var(--blau); color: #fff; line-height: 1.6;
+    font-family: "Segoe UI", "Helvetica Neue", Helvetica, Roboto, Arial, system-ui, sans-serif;
+  }
+  a { color: #fff; text-underline-offset: .18em; }
+  a:focus-visible { outline: 3px solid #fff; outline-offset: 3px; border-radius: 4px; }
+  .wrap { width: 100%; max-width: 40rem; margin: 0 auto; padding: 0 1.25rem; }
+  main { flex: 1; display: flex; align-items: center; padding: 4rem 0 3rem; }
+  .marke { display: inline-flex; align-items: center; gap: .7rem; font-weight: 700; font-size: 1.1rem; margin-bottom: 2.5rem; }
+  .marke span { color: var(--gold); }
+  .marke img { border-radius: 9px; box-shadow: 0 0 0 2px rgba(255,255,255,.35); }
+  h1 { font-size: clamp(2rem, 6vw, 3rem); line-height: 1.12; letter-spacing: -.025em; margin: 0 0 1rem; }
+  p { margin: 0 0 2rem; color: var(--hell); font-size: 1.1rem; max-width: 30em; }
+  .kontakt { display: flex; flex-wrap: wrap; gap: .75rem 1.25rem; align-items: center; }
+  .tel {
+    display: inline-block; background: var(--gold); color: #10183a; font-weight: 700; text-decoration: none;
+    font-size: 1.15rem; padding: .75rem 1.4rem; border-radius: 1rem 1rem 1rem .25rem; white-space: nowrap;
+  }
+  .tel:focus-visible { outline-color: var(--gold); }
+  .mail { font-weight: 700; }
+  footer { padding: 1.5rem 0; font-size: .85rem; color: var(--hell); border-top: 1px solid rgba(255,255,255,.14); }
+  footer .wrap { max-width: 40rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: .75rem 1.5rem; }
+  footer nav { display: flex; gap: 1.5rem; }
+  footer a { color: var(--hell); }
 </style>
 </head>
 <body>
-<header class="kopf"><div class="wrap"><a class="marke" href="/"><img src="/favicon.svg" width="30" height="30" alt=""><span>Marius Lange <span>IT-Services</span></span></a></div></header>
 <main>
   <div class="wrap">
-    <h1>Diese Seite gibt es nicht.</h1>
-    <p>Vielleicht hat sich in der Adresse ein Tippfehler eingeschlichen. Auf der Startseite finden Sie alle Informationen, oder Sie rufen einfach direkt an.</p>
-    <a class="knopf" href="/">Zur Startseite</a>
-    <a class="tel" href="tel:+4915129880857">01512 9880857</a>
+    <div class="marke"><img src="/favicon.svg" width="40" height="40" alt=""><div>Marius Lange <span>IT-Services</span></div></div>
+    <h1>Hier entsteht gerade meine neue Website.</h1>
+    <p>Bis es so weit ist, erreichen Sie mich ganz einfach telefonisch oder per E‑Mail – für Technikhilfe zu Hause und IT für kleine Betriebe in Gotha und Umgebung.</p>
+    <div class="kontakt">
+      <a class="tel" href="tel:+4915129880857">01512 9880857</a>
+      <a class="mail" href="mailto:kontakt@it-gotha.de">kontakt@it-gotha.de</a>
+    </div>
   </div>
 </main>
+<footer>
+  <div class="wrap">
+    <span>© 2026 Marius Lange IT-Services</span>
+    <nav aria-label="Rechtliches"><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a></nav>
+  </div>
+</footer>
 </body>
 </html>
