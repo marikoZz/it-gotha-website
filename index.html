@@ -252,6 +252,11 @@
   .fuss .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
   .fuss nav { display: flex; gap: 1.5rem; }
 
+  /* Hinweis: im Aufbau */
+  .aufbau .lead { margin-bottom: 0; }
+  .aufbau-marke { display: inline-block; margin: 0 0 .9rem; padding: .3rem .85rem; border-radius: 999px;
+    background: var(--gold); color: var(--tinte); font-weight: 700; font-size: .85rem; }
+  .aufbau + .block { border-top: 0; padding-top: 0; }
   /* Rückruf-Formular */
   .rueckruf-grid { display: grid; gap: 2rem; }
   @media (min-width: 60rem) { .rueckruf-grid { grid-template-columns: .8fr 1.2fr; gap: 4rem; } }
@@ -321,7 +326,7 @@
       </div>
 
       <nav class="wege" aria-label="Angebot wählen">
-        <a class="weg" href="#leistungen">
+        <a class="weg" href="#aufbau">
           <div class="weg-kopf">Für mich <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div>
           <p>Computer, Smartphone, Drucker, WLAN und Kameras – eingerichtet, repariert und in Ruhe erklärt.</p>
         </a>
@@ -333,44 +338,11 @@
     </div>
   </section>
 
-  <section class="block" id="leistungen" aria-labelledby="t-leistungen">
+  <section class="block aufbau" id="aufbau" aria-labelledby="t-aufbau">
     <div class="wrap">
-      <h2 class="titel" id="t-leistungen">Wobei ich helfe</h2>
-      <p class="lead">Ich richte Geräte ein, behebe Probleme und erkläre die Bedienung so, dass Sie danach selbst zurechtkommen.</p>
-      <ul class="situationen">
-        <li><strong>Computer und Laptop</strong><span>Startet nicht, ist langsam, braucht ein Update oder soll neu eingerichtet werden</span></li>
-        <li><strong>Smartphone und Tablet</strong><span>Neues Gerät einrichten, Daten übertragen, Apps und Fotos verstehen</span></li>
-        <li><strong>Drucker</strong><span>Anschließen, ins WLAN bringen, Druckaufträge, die nicht ankommen</span></li>
-        <li><strong>WLAN und Internet</strong><span>Router einrichten, schwaches WLAN in einzelnen Räumen verbessern</span></li>
-        <li><strong>Kameras</strong><span>Türklingel- und Überwachungskameras verbinden und am Handy einrichten</span></li>
-        <li><strong>Erklären und üben</strong><span>Persönliche Einweisung, auch zu E-Mail, Videoanrufen oder künstlicher Intelligenz</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="block firma" id="unternehmen" aria-labelledby="t-firma">
-    <div class="wrap">
-      <h2 class="titel" id="t-firma">Für kleine Unternehmen</h2>
-      <p class="lead">Für Praxen, Gastronomie, Handwerk und Büros ohne eigene IT-Abteilung.</p>
-      <dl class="firma-liste">
-        <div><dt>IT-Infrastruktur</dt><dd>Netzwerk, WLAN, Gäste-WLAN und Telefonie einrichten und erweitern</dd></div>
-        <div><dt>Laufende Betreuung</dt><dd>Ein fester Ansprechpartner für Updates, Datensicherung und alles, was hakt</dd></div>
-        <div><dt>Individuelle Software</dt><dd>Lösungen für Ihre Abläufe, zum Beispiel Erweiterungen für ERP-Systeme</dd></div>
-        <div><dt>Beratung</dt><dd>Welche Geräte und Lösungen zu Ihrem Betrieb passen</dd></div>
-      </dl>
-      <a class="mehr-link" href="/unternehmen">Mehr für Unternehmen</a>
-    </div>
-  </section>
-
-  <section class="block" id="ablauf" aria-labelledby="t-ablauf">
-    <div class="wrap">
-      <h2 class="titel" id="t-ablauf">So läuft es ab</h2>
-      <p class="lead">Unkompliziert und persönlich.</p>
-      <ol class="ablauf">
-        <li><h3>Anrufen</h3><p>Sie rufen an oder fordern einen Rückruf an und schildern kurz, worum es geht. Oft lässt sich schon am Telefon einschätzen, was zu tun ist.</p></li>
-        <li><h3>Termin vereinbaren</h3><p>Wir finden einen Termin, der Ihnen passt, am liebsten direkt bei Ihnen zu Hause.</p></li>
-        <li><h3>Gemeinsam lösen</h3><p>Ich behebe das Problem und zeige Ihnen, wie Sie künftig selbst klarkommen.</p></li>
-      </ol>
+      <p class="aufbau-marke">Im Aufbau</p>
+      <h2 class="titel" id="t-aufbau">Hier entsteht gerade mehr.</h2>
+      <p class="lead">Ausführliche Infos zu meinen Leistungen folgen in Kürze. Bis dahin erreichen Sie mich ganz einfach telefonisch unter <a href="tel:+4915129880857">01512 9880857</a>, per E-Mail an <a href="mailto:kontakt@it-gotha.de" style="white-space:nowrap">kontakt@it-gotha.de</a> oder über das Rückruf-Formular.</p>
     </div>
   </section>
 
@@ -412,34 +384,6 @@
     </div>
   </section>
 
-  <section class="block" id="ueber-mich" aria-labelledby="t-person">
-    <div class="wrap person">
-      <!-- TODO: Platzhalter durch <img src="marius.jpg" alt="Marius Lange"> ersetzen -->
-      <div class="foto" role="img" aria-label="Platzhalter für ein Foto">Platz für ein Foto von dir</div>
-      <div>
-        <h2 class="titel" id="t-person">Ihr Ansprechpartner</h2>
-        <p>Ich bin Marius Lange und kümmere mich persönlich um Ihr Anliegen, vom ersten Anruf bis zur Lösung. Sie haben immer denselben Ansprechpartner.</p>
-        <p>Mir ist wichtig, dass Sie verstehen, was ich mache, und sich danach mit Ihrer Technik sicherer fühlen.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" id="kontakt" aria-labelledby="t-kontakt">
-    <div class="wrap zwei">
-      <div>
-        <h2 class="titel">Einsatzgebiet</h2>
-        <p class="orte">Gotha und Umgebung, unter anderem Waltershausen, Friedrichroda, Ohrdruf, Bad Tabarz, Tambach-Dietharz, Drei Gleichen, Nesse-Apfelstädt und Nessetal.</p>
-      </div>
-      <div>
-        <h2 class="titel" id="t-kontakt">Kontakt</h2>
-        <dl class="kontakt-liste">
-          <div><dt>Telefon</dt><dd><a href="tel:+4915129880857">01512 9880857</a></dd></div>
-          <div><dt>E-Mail</dt><dd><a href="mailto:kontakt@it-gotha.de">kontakt@it-gotha.de</a></dd></div>
-          <div><dt>Erreichbar</dt><dd>Mo – Fr 9 bis 18 Uhr, Sa 10 bis 15 Uhr</dd></div>
-        </dl>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer class="fuss">
