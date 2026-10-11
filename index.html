@@ -102,7 +102,7 @@
   .einstieg a:focus-visible { outline-color: #fff; }
   .kopf a:focus-visible { outline-color: #fff; }
   @media (min-width: 48rem) { .einstieg { padding: 4.5rem 0 5rem; } }
-  .einstieg-grid { display: grid; gap: 2.5rem; align-items: end; }
+  .einstieg-grid { display: grid; gap: 2.5rem; align-items: end; grid-template-columns: minmax(0, 1fr); }
   @media (min-width: 60rem) { .einstieg-grid { grid-template-columns: 1.15fr .85fr; gap: 3.5rem; } }
   h1 {
     font-size: clamp(2.1rem, 5.2vw, 3.4rem);
@@ -114,6 +114,16 @@
   }
   .einstieg p { font-size: 1.15rem; color: #c9d6f5; margin: 0; max-width: var(--text); }
 
+  /* Umschalter Privat / Unternehmen */
+  .weiche { display: inline-flex; background: rgba(255,255,255,.12); border-radius: 999px; padding: .3rem; margin: 0 0 2rem; gap: .25rem; max-width: 100%; }
+  .weiche a { color: #fff; text-decoration: none; font-weight: 700; font-size: .95rem; padding: .55rem 1.15rem; border-radius: 999px; white-space: nowrap; }
+  .weiche a:hover { background: rgba(255,255,255,.12); }
+  .weiche a[aria-current="page"] { background: #fff; color: var(--blau); }
+  @media (max-width: 26rem) { .weiche a { padding: .5rem .7rem; font-size: .8rem; } }
+  @media (max-width: 21rem) { .weiche { display: flex; } .weiche a { flex: 1; white-space: normal; text-align: center; line-height: 1.25; } }
+  .mehr-link { display: inline-block; margin-top: 2rem; color: #fff; font-weight: 700; text-decoration: none;
+    border: 2px solid rgba(255,255,255,.55); border-radius: 999px; padding: .65rem 1.3rem; }
+  .mehr-link:hover { background: rgba(255,255,255,.12); border-color: #fff; }
   /* Die Anruf-Karte: das eine auffällige Element der Seite */
   .anruf {
     background: var(--gold);
@@ -122,9 +132,10 @@
     color: var(--tinte);
   }
   .anruf h2 { margin: 0 0 .25rem; font-size: 1.1rem; font-weight: 700; }
+  @media (max-width: 22rem) { .anruf { padding: 1.4rem 1.25rem 1.25rem; } }
   .anruf .nummer {
     display: block;
-    font-size: clamp(2rem, 7vw, 2.6rem);
+    font-size: clamp(1.5rem, 8.5vw, 2.6rem);
     font-weight: 700;
     letter-spacing: -.01em;
     line-height: 1.15;
@@ -278,6 +289,7 @@
   <section class="einstieg">
     <div class="wrap einstieg-grid">
       <div>
+        <nav class="weiche" aria-label="Angebot wählen"><a href="/" aria-current="page">Für mich</a><a href="/unternehmen">Für mein Unternehmen</a></nav>
         <h1>Technik soll den Alltag erleichtern, nicht erschweren.</h1>
         <p>Ich unterstütze Sie dabei, in Ruhe und Schritt für Schritt – gern direkt bei Ihnen zu Hause in Gotha und Umgebung.</p>
       </div>
@@ -319,6 +331,7 @@
         <div><dt>Individuelle Software</dt><dd>Lösungen für Ihre Abläufe, zum Beispiel Erweiterungen für ERP-Systeme</dd></div>
         <div><dt>Beratung</dt><dd>Welche Geräte und Lösungen zu Ihrem Betrieb passen</dd></div>
       </dl>
+      <a class="mehr-link" href="/unternehmen">Mehr für Unternehmen</a>
     </div>
   </section>
 
@@ -328,7 +341,7 @@
       <p class="lead">Unkompliziert und persönlich.</p>
       <ol class="ablauf">
         <li><h3>Anrufen</h3><p>Sie rufen an oder fordern einen Rückruf an und schildern kurz, worum es geht. Oft lässt sich schon am Telefon einschätzen, was zu tun ist.</p></li>
-        <li><h3>Termin vereinbaren</h3><p>Wir finden einen Termin, der Ihnen passt, bei Ihnen zu Hause oder in Ihrem Betrieb.</p></li>
+        <li><h3>Termin vereinbaren</h3><p>Wir finden einen Termin, der Ihnen passt, am liebsten direkt bei Ihnen zu Hause.</p></li>
         <li><h3>Gemeinsam lösen</h3><p>Ich behebe das Problem und zeige Ihnen, wie Sie künftig selbst klarkommen.</p></li>
       </ol>
     </div>
