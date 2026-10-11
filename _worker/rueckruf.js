@@ -29,6 +29,7 @@ export default {
     const name = feld("name", 100);
     const telefon = feld("telefon", 40);
     const zeit = feld("zeit", 30) || "egal";
+    const art = ["Privat", "Unternehmen"].includes(feld("art", 20)) ? feld("art", 20) : "unbekannt";
     const anliegen = (form.get("anliegen") || "").toString().trim().slice(0, 1500);
 
     if (!name || !/^[+0-9 ()\/.-]{6,30}$/.test(telefon)) {
@@ -38,6 +39,7 @@ export default {
     const text = [
       "Neuer Rückrufwunsch über it-gotha.de",
       "",
+      `Kunde:     ${art}`,
       `Name:      ${name}`,
       `Telefon:   ${telefon}`,
       `Am besten: ${zeit}`,
@@ -56,7 +58,7 @@ export default {
       body: JSON.stringify({
         sender: { name: "Website it-gotha.de", email: POSTFACH },
         to: [{ email: POSTFACH }],
-        subject: `Rückrufwunsch: ${name} (${telefon})`,
+        subject: `[${art}] Rückrufwunsch: ${name} (${telefon})`,
         textContent: text,
       }),
     });
