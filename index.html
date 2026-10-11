@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marius Lange IT-Services – Technikhilfe in Gotha und Umgebung</title>
+<meta name="description" content="Persönliche Hilfe bei Computer, Smartphone, Drucker, Kameras und WLAN in Gotha und Umgebung – in Ruhe und Schritt für Schritt. IT-Betreuung und individuelle Software für kleine Unternehmen.">
+<style>
+  /* Keine externen Schriften oder Skripte: lädt nichts von Drittanbietern (DSGVO-freundlich). */
+  :root {
+    --tanne: #1d4a3c;      /* Hauptfarbe: tiefes Waldgrün */
+    --tanne-hell: #e4ede8; /* Flächen */
+    --gelb: #f5c83b;       /* Anruf-Fläche */
+    --gelb-tief: #e2b21f;
+    --tinte: #18221e;      /* Text */
+    --grau: #4b5953;       /* Nebentext */
+    --papier: #f8f9f7;     /* Hintergrund */
+    --linie: #cfd9d3;
+    --maxw: 68rem;
+    --text: 40rem;
+  }
+  * { box-sizing: border-box; }
+  html { font-size: 112.5%; -webkit-text-size-adjust: 100%; }
+  @media (min-width: 48rem) { html { font-size: 125%; } }
+  body {
+    margin: 0;
+    background: var(--papier);
+    color: var(--tinte);
+    font-family: "Segoe UI", "Helvetica Neue", Helvetica, Roboto, Arial, system-ui, sans-serif;
+    line-height: 1.6;
+  }
+  a { color: var(--tanne); text-underline-offset: .18em; }
+  a:focus-visible, button:focus-visible {
+    outline: 3px solid var(--tinte);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 1rem; }
+  @media (min-width: 48rem) { .wrap { padding: 0 2rem; } }
+
+  /* Kopfzeile */
+  .kopf { border-bottom: 1px solid var(--linie); background: #fff; }
+  .kopf .wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1rem; min-height: 4rem; flex-wrap: wrap; padding-block: .5rem;
+  }
+  .marke { font-weight: 700; font-size: 1.05rem; color: var(--tinte); text-decoration: none; letter-spacing: -.01em; }
+  .marke span { color: var(--tanne); }
+  .kopf-tel { font-weight: 700; color: var(--tanne); text-decoration: none; white-space: nowrap; }
+  .kopf-tel:hover { text-decoration: underline; }
+
+  /* Einstieg */
+  .einstieg { padding: 3rem 0 3.5rem; }
+  @media (min-width: 48rem) { .einstieg { padding: 4.5rem 0 5rem; } }
+  .einstieg-grid { display: grid; gap: 2.5rem; align-items: end; }
+  @media (min-width: 60rem) { .einstieg-grid { grid-template-columns: 1.15fr .85fr; gap: 3.5rem; } }
+  h1 {
+    font-size: clamp(2.1rem, 5.2vw, 3.4rem);
+    line-height: 1.12;
+    letter-spacing: -.025em;
+    margin: 0 0 1.25rem;
+    font-weight: 700;
+    max-width: 14em;
+  }
+  .einstieg p { font-size: 1.15rem; color: var(--grau); margin: 0; max-width: var(--text); }
+
+  /* Die Anruf-Karte: das eine auffällige Element der Seite */
+  .anruf {
+    background: var(--gelb);
+    border-radius: 1.25rem 1.25rem 1.25rem .25rem;
+    padding: 1.75rem 1.75rem 1.5rem;
+    color: var(--tinte);
+  }
+  .anruf h2 { margin: 0 0 .25rem; font-size: 1.1rem; font-weight: 700; }
+  .anruf .nummer {
+    display: block;
+    font-size: clamp(2rem, 7vw, 2.6rem);
+    font-weight: 700;
+    letter-spacing: -.01em;
+    line-height: 1.15;
+    color: var(--tinte);
+    text-decoration: none;
+    margin: .25rem 0 .9rem;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .anruf .nummer:hover { text-decoration: underline; text-decoration-thickness: 3px; }
+  .anruf dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: .1rem 1rem; font-size: .95rem; }
+  .anruf dt { font-weight: 700; }
+  .anruf dd { margin: 0; }
+  .anruf .hinweis { margin: 1rem 0 0; font-size: .9rem; border-top: 1px solid rgba(24,34,30,.25); padding-top: .8rem; }
+
+  /* Abschnitte */
+  section.block { padding: 3.5rem 0; border-top: 1px solid var(--linie); }
+  h2.titel {
+    font-size: clamp(1.6rem, 3.6vw, 2.1rem);
+    line-height: 1.2; letter-spacing: -.02em;
+    margin: 0 0 .75rem;
+  }
+  .lead { color: var(--grau); margin: 0 0 2rem; max-width: var(--text); }
+
+  /* Wobei ich helfe: als Alltagssituationen formuliert */
+  .situationen { list-style: none; padding: 0; margin: 0; display: grid; gap: 0; }
+  @media (min-width: 48rem) { .situationen { grid-template-columns: 1fr 1fr; column-gap: 3rem; } }
+  .situationen li {
+    padding: 1rem 0 1rem 1.1rem;
+    border-bottom: 1px solid var(--linie);
+    position: relative;
+  }
+  .situationen li::before {
+    content: ""; position: absolute; left: 0; top: 1.35rem;
+    width: .45rem; height: .45rem; border-radius: 50%; background: var(--tanne);
+  }
+  .situationen strong { display: block; }
+  .situationen span { color: var(--grau); font-size: .95rem; }
+
+  /* Unternehmen */
+  .firma { background: var(--tanne); color: #fff; border-top: 0; }
+  .firma .lead { color: #c9dbd2; }
+  .firma-liste { display: grid; gap: 1.5rem 3rem; margin: 0; }
+  @media (min-width: 48rem) { .firma-liste { grid-template-columns: 1fr 1fr; } }
+  .firma-liste div { border-top: 2px solid rgba(255,255,255,.35); padding-top: .9rem; }
+  .firma-liste dt { font-weight: 700; font-size: 1.1rem; margin-bottom: .2rem; }
+  .firma-liste dd { margin: 0; color: #dbe7e1; }
+
+  /* Ablauf: echte Reihenfolge, deshalb nummeriert */
+  .ablauf { list-style: none; counter-reset: schritt; padding: 0; margin: 0; display: grid; gap: 1.75rem; }
+  @media (min-width: 48rem) { .ablauf { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; } }
+  .ablauf li { counter-increment: schritt; }
+  .ablauf li::before {
+    content: counter(schritt);
+    display: inline-grid; place-items: center;
+    width: 2.4rem; height: 2.4rem; border-radius: 50%;
+    background: var(--tanne-hell); color: var(--tanne);
+    font-weight: 700; margin-bottom: .75rem;
+  }
+  .ablauf h3 { margin: 0 0 .35rem; font-size: 1.15rem; }
+  .ablauf p { margin: 0; color: var(--grau); }
+
+  /* Über mich */
+  .person { display: grid; gap: 2rem; align-items: center; }
+  @media (min-width: 48rem) { .person { grid-template-columns: 14rem 1fr; gap: 3rem; } }
+  .foto {
+    aspect-ratio: 4 / 5; border-radius: 1rem; background: var(--tanne-hell);
+    display: grid; place-items: center; color: var(--grau); font-size: .9rem;
+    text-align: center; padding: 1rem; max-width: 14rem;
+    border: 2px dashed var(--linie);
+  }
+  .person p { margin: 0 0 1rem; max-width: var(--text); }
+
+  /* Einsatzgebiet & Kontakt */
+  .zwei { display: grid; gap: 2.5rem; }
+  @media (min-width: 48rem) { .zwei { grid-template-columns: 1fr 1fr; gap: 4rem; } }
+  .orte { margin: 0; color: var(--grau); }
+  .kontakt-liste { margin: 0; display: grid; gap: .9rem; }
+  .kontakt-liste dt { font-size: .9rem; color: var(--grau); }
+  .kontakt-liste dd { margin: 0; font-weight: 700; font-size: 1.1rem; }
+
+  /* Fuß */
+  .fuss { border-top: 1px solid var(--linie); padding: 2rem 0 6rem; font-size: .9rem; color: var(--grau); }
+  @media (min-width: 48rem) { .fuss { padding-bottom: 2rem; } }
+  .fuss .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+  .fuss nav { display: flex; gap: 1.5rem; }
+
+  /* Fester Anruf-Knopf auf dem Handy */
+  .handy-anruf {
+    position: fixed; left: 1rem; right: 1rem; bottom: 1rem;
+    display: flex; justify-content: center; align-items: center; gap: .6rem;
+    background: var(--gelb); color: var(--tinte);
+    font-weight: 700; font-size: 1.1rem; text-decoration: none;
+    padding: 1rem; border-radius: 999px;
+    box-shadow: 0 6px 18px rgba(24,34,30,.25);
+  }
+  .handy-anruf:active { background: var(--gelb-tief); }
+  .handy-anruf svg { width: 1.3rem; height: 1.3rem; }
+  @media (min-width: 48rem) { .handy-anruf { display: none; } }
+</style>
+</head>
+<body>
+
+<header class="kopf">
+  <div class="wrap">
+    <a class="marke" href="#">Marius Lange <span>IT-Services</span></a>
+    <!-- TODO: echte Nummer eintragen (auch im href, ohne Leerzeichen, mit +49) -->
+    <a class="kopf-tel" href="tel:+4915100000000">0151 0000 0000</a>
+  </div>
+</header>
+
+<main>
+  <section class="einstieg">
+    <div class="wrap einstieg-grid">
+      <div>
+        <h1>Technik soll den Alltag erleichtern, nicht erschweren.</h1>
+        <p>Ich unterstütze Sie dabei, in Ruhe und Schritt für Schritt – gern direkt bei Ihnen zu Hause in Gotha und Umgebung.</p>
+      </div>
+
+      <aside class="anruf" aria-labelledby="anruf-titel">
+        <h2 id="anruf-titel">Rufen Sie einfach an</h2>
+        <a class="nummer" href="tel:+4915100000000">0151 0000 0000</a>
+        <dl>
+          <dt>Mo – Fr</dt><dd>9 bis 18 Uhr</dd>
+          <dt>Sa</dt><dd>10 bis 14 Uhr</dd>
+        </dl>
+        <p class="hinweis">Nicht erreicht? Sprechen Sie auf die Mailbox, ich rufe zurück.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="block" id="leistungen" aria-labelledby="t-leistungen">
+    <div class="wrap">
+      <h2 class="titel" id="t-leistungen">Wobei ich helfe</h2>
+      <p class="lead">Ich richte Geräte ein, behebe Probleme und erkläre die Bedienung so, dass Sie danach selbst zurechtkommen.</p>
+      <ul class="situationen">
+        <li><strong>Computer und Laptop</strong><span>Startet nicht, ist langsam, braucht ein Update oder soll neu eingerichtet werden</span></li>
+        <li><strong>Smartphone und Tablet</strong><span>Neues Gerät einrichten, Daten übertragen, Apps und Fotos verstehen</span></li>
+        <li><strong>Drucker</strong><span>Anschließen, ins WLAN bringen, Druckaufträge, die nicht ankommen</span></li>
+        <li><strong>WLAN und Internet</strong><span>Router einrichten, schwaches WLAN in einzelnen Räumen verbessern</span></li>
+        <li><strong>Kameras</strong><span>Türklingel- und Überwachungskameras verbinden und am Handy einrichten</span></li>
+        <li><strong>Erklären und üben</strong><span>Persönliche Einweisung, auch zu E-Mail, Videoanrufen oder künstlicher Intelligenz</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block firma" id="unternehmen" aria-labelledby="t-firma">
+    <div class="wrap">
+      <h2 class="titel" id="t-firma">Für kleine Unternehmen</h2>
+      <p class="lead">Für Praxen, Gastronomie, Handwerk und Büros ohne eigene IT-Abteilung.</p>
+      <dl class="firma-liste">
+        <div><dt>IT-Infrastruktur</dt><dd>Netzwerk, WLAN, Gäste-WLAN und Telefonie einrichten und erweitern</dd></div>
+        <div><dt>Laufende Betreuung</dt><dd>Ein fester Ansprechpartner für Updates, Datensicherung und alles, was hakt</dd></div>
+        <div><dt>Individuelle Software</dt><dd>Lösungen für Ihre Abläufe, zum Beispiel Erweiterungen für ERP-Systeme</dd></div>
+        <div><dt>Beratung</dt><dd>Welche Geräte und Lösungen zu Ihrem Betrieb passen</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="block" id="ablauf" aria-labelledby="t-ablauf">
+    <div class="wrap">
+      <h2 class="titel" id="t-ablauf">So läuft es ab</h2>
+      <p class="lead">Unkompliziert, ohne Formulare.</p>
+      <ol class="ablauf">
+        <li><h3>Anrufen</h3><p>Sie schildern kurz, worum es geht. Oft lässt sich schon am Telefon einschätzen, was zu tun ist.</p></li>
+        <li><h3>Termin vereinbaren</h3><p>Wir finden einen Termin, der Ihnen passt, bei Ihnen zu Hause oder in Ihrem Betrieb.</p></li>
+        <li><h3>Gemeinsam lösen</h3><p>Ich behebe das Problem und zeige Ihnen, wie Sie künftig selbst klarkommen.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="ueber-mich" aria-labelledby="t-person">
+    <div class="wrap person">
+      <!-- TODO: Platzhalter durch <img src="marius.jpg" alt="Marius Lange"> ersetzen -->
+      <div class="foto" role="img" aria-label="Platzhalter für ein Foto">Platz für ein Foto von dir</div>
+      <div>
+        <h2 class="titel" id="t-person">Ihr Ansprechpartner</h2>
+        <p>Ich bin Marius Lange und kümmere mich persönlich um Ihr Anliegen, vom ersten Anruf bis zur Lösung. Sie haben immer denselben Ansprechpartner.</p>
+        <p>Mir ist wichtig, dass Sie verstehen, was ich mache, und sich danach mit Ihrer Technik sicherer fühlen.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="kontakt" aria-labelledby="t-kontakt">
+    <div class="wrap zwei">
+      <div>
+        <h2 class="titel">Einsatzgebiet</h2>
+        <p class="orte">Gotha und Umgebung, unter anderem Waltershausen, Friedrichroda, Ohrdruf, Bad Tabarz, Tambach-Dietharz, Drei Gleichen, Nesse-Apfelstädt und Nessetal.</p>
+      </div>
+      <div>
+        <h2 class="titel" id="t-kontakt">Kontakt</h2>
+        <dl class="kontakt-liste">
+          <div><dt>Telefon</dt><dd><a href="tel:+4915100000000">0151 0000 0000</a></dd></div>
+          <div><dt>E-Mail</dt><dd><a href="mailto:info@it-gotha.de">info@it-gotha.de</a></dd></div>
+          <div><dt>Erreichbar</dt><dd>Mo – Fr 9 bis 18 Uhr, Sa 10 bis 14 Uhr</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="fuss">
+  <div class="wrap">
+    <span>© 2026 Marius Lange IT-Services</span>
+    <nav aria-label="Rechtliches">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </nav>
+  </div>
+</footer>
+
+<a class="handy-anruf" href="tel:+4915100000000" aria-label="Jetzt anrufen: 0151 0000 0000">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+  Jetzt anrufen
+</a>
+
+</body>
+</html>
