@@ -2,67 +2,444 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
+<script>document.documentElement.classList.add('js');</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Marius Lange IT-Services – Website im Aufbau</title>
-<meta name="description" content="Marius Lange IT-Services in Gotha und Umgebung. Die Website entsteht gerade – erreichbar bin ich trotzdem schon.">
+<title>Marius Lange IT-Services – Technikhilfe in Gotha und Umgebung</title>
+<meta name="description" content="Persönliche Hilfe bei Computer, Smartphone, Drucker, Kameras und WLAN in Gotha und Umgebung – in Ruhe und Schritt für Schritt. IT-Betreuung und individuelle Software für kleine Unternehmen.">
+<link rel="canonical" href="https://www.it-gotha.de/">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#0b3fa8">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="de_DE">
-<meta property="og:title" content="Marius Lange IT-Services">
-<meta property="og:description" content="Die Website entsteht gerade – erreichbar bin ich trotzdem schon.">
+<meta property="og:site_name" content="Marius Lange IT-Services">
+<meta property="og:title" content="Marius Lange IT-Services – Technikhilfe in Gotha und Umgebung">
+<meta property="og:description" content="Hilfe bei Computer, Smartphone, Drucker, Kameras und WLAN – in Ruhe und Schritt für Schritt. Auch für kleine Unternehmen.">
+<meta property="og:url" content="https://www.it-gotha.de/">
 <meta property="og:image" content="https://www.it-gotha.de/og-bild.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Marius Lange IT-Services",
+  "url": "https://www.it-gotha.de/",
+  "logo": "https://www.it-gotha.de/apple-touch-icon.png",
+  "image": "https://www.it-gotha.de/og-bild.png",
+  "description": "IT-Service für Privat- und Geschäftskunden: Einrichtung und Reparatur von Computern, Smartphones, Druckern, Kameras und WLAN, IT-Betreuung und individuelle Software.",
+  "telephone": "+49 1512 9880857",
+  "email": "kontakt@it-gotha.de",
+  "founder": { "@type": "Person", "name": "Marius Lange" },
+  "address": {
+    "@type": "PostalAddress",
+    "postalCode": "99867",
+    "addressLocality": "Gotha",
+    "addressRegion": "Thüringen",
+    "addressCountry": "DE"
+  },
+  "areaServed": ["Gotha", "Waltershausen", "Friedrichroda", "Ohrdruf", "Bad Tabarz", "Tambach-Dietharz", "Drei Gleichen", "Nesse-Apfelstädt", "Nessetal"],
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "10:00", "closes": "15:00" }
+  ]
+}
+</script>
 <style>
-  :root { --blau:#0b3fa8; --gold:#ffc94a; --hell:#c9d6f5; }
+  /* Keine externen Schriften oder Skripte: lädt nichts von Drittanbietern (DSGVO-freundlich). */
+  :root {
+    --blau: #0b3fa8;      /* Hauptfarbe: Kobaltblau */
+    --blau-hell: #e6ecfb; /* Flächen */
+    --gold: #ffc94a;       /* Akzent: Gold, Anruf-Fläche */
+    --gold-tief: #f2b62a;
+    --tinte: #10183a;      /* Text */
+    --grau: #4a5470;       /* Nebentext */
+    --papier: #f7f9fd;     /* Hintergrund */
+    --linie: #d5ddee;
+    --maxw: 68rem;
+    --text: 40rem;
+  }
   * { box-sizing: border-box; }
   html { font-size: 112.5%; -webkit-text-size-adjust: 100%; }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
   @media (min-width: 48rem) { html { font-size: 125%; } }
   body {
-    margin: 0; min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column;
-    background: var(--blau); color: #fff; line-height: 1.6;
+    margin: 0;
+    background: var(--papier);
+    color: var(--tinte);
     font-family: "Segoe UI", "Helvetica Neue", Helvetica, Roboto, Arial, system-ui, sans-serif;
+    line-height: 1.6;
   }
-  a { color: #fff; text-underline-offset: .18em; }
-  a:focus-visible { outline: 3px solid #fff; outline-offset: 3px; border-radius: 4px; }
-  .wrap { width: 100%; max-width: 40rem; margin: 0 auto; padding: 0 1.25rem; }
-  main { flex: 1; display: flex; align-items: center; padding: 4rem 0 3rem; }
-  .marke { display: inline-flex; align-items: center; gap: .7rem; font-weight: 700; font-size: 1.1rem; margin-bottom: 2.5rem; }
-  .marke span { color: var(--gold); }
-  .marke img { border-radius: 9px; box-shadow: 0 0 0 2px rgba(255,255,255,.35); }
-  h1 { font-size: clamp(2rem, 6vw, 3rem); line-height: 1.12; letter-spacing: -.025em; margin: 0 0 1rem; }
-  p { margin: 0 0 2rem; color: var(--hell); font-size: 1.1rem; max-width: 30em; }
-  .kontakt { display: flex; flex-wrap: wrap; gap: .75rem 1.25rem; align-items: center; }
-  .tel {
-    display: inline-block; background: var(--gold); color: #10183a; font-weight: 700; text-decoration: none;
-    font-size: 1.15rem; padding: .75rem 1.4rem; border-radius: 1rem 1rem 1rem .25rem; white-space: nowrap;
+  a { color: var(--blau); text-underline-offset: .18em; }
+  a:focus-visible, button:focus-visible {
+    outline: 3px solid var(--tinte);
+    outline-offset: 3px;
+    border-radius: 4px;
   }
-  .tel:focus-visible { outline-color: var(--gold); }
-  .mail { font-weight: 700; }
-  footer { padding: 1.5rem 0; font-size: .85rem; color: var(--hell); border-top: 1px solid rgba(255,255,255,.14); }
-  footer .wrap { max-width: 40rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: .75rem 1.5rem; }
-  footer nav { display: flex; gap: 1.5rem; }
-  footer a { color: var(--hell); }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 1rem; }
+  @media (min-width: 48rem) { .wrap { padding: 0 2rem; } }
+
+  /* Kopfzeile */
+  .kopf { background: var(--blau); }
+  .kopf .wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1rem; min-height: 4rem; flex-wrap: wrap; padding-block: .5rem;
+  }
+  .marke { font-weight: 700; font-size: 1.05rem; color: #fff; text-decoration: none; letter-spacing: -.01em; display: inline-flex; align-items: center; gap: .55rem; }
+  .marke span span { color: var(--gold); }
+  .marke img { border-radius: 7px; box-shadow: 0 0 0 2px rgba(255,255,255,.35); }
+  .kopf-link {
+    font-weight: 700; color: #fff; text-decoration: none; white-space: nowrap; font-size: .95rem;
+    border: 2px solid rgba(255,255,255,.55); border-radius: 999px; padding: .4rem 1rem;
+  }
+  .kopf-link:hover { background: rgba(255,255,255,.12); border-color: #fff; }
+  @media (max-width: 30rem) { .kopf-link { display: none; } }
+
+  /* Einstieg */
+  .einstieg { background: var(--blau); color: #fff; padding: 2.5rem 0 3rem;
+    min-height: calc(100svh - 4rem); display: flex; flex-direction: column; justify-content: center; }
+  @media (min-width: 48rem) { .einstieg { padding: 2.5rem 0 3rem; } }
+  .einstieg a:focus-visible { outline-color: #fff; }
+  .kopf a:focus-visible { outline-color: #fff; }
+  .einstieg-text { max-width: 46rem; }
+  h1 {
+    font-size: clamp(2.2rem, 5.6vw, 3.6rem);
+    line-height: 1.06;
+    letter-spacing: -.03em;
+    margin: 0 0 1.25rem;
+    font-weight: 700;
+  }
+  .einstieg p.unter { font-size: 1.2rem; color: #c9d6f5; margin: 0 0 2.25rem; max-width: 34em; }
+  .einstieg-kontakt { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; }
+  .gold-tel {
+    display: inline-flex; flex-direction: column; background: var(--gold); color: var(--tinte); text-decoration: none;
+    padding: .8rem 1.5rem .85rem; border-radius: 1.1rem 1.1rem 1.1rem .25rem; line-height: 1.2;
+  }
+  .gold-tel small { font-size: .8rem; font-weight: 600; }
+  .gold-tel strong { font-size: clamp(1.4rem, 5vw, 1.9rem); letter-spacing: -.01em; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .gold-tel:hover strong { text-decoration: underline; text-decoration-thickness: 2px; }
+  .gold-tel:focus-visible { outline-color: var(--gold) !important; }
+  .zeiten-info { color: #c9d6f5; font-size: .95rem; line-height: 1.5; }
+  .zeiten-info a { color: #fff; font-weight: 700; }
+
+  /* Zwei Wege */
+  .wege { display: grid; gap: 1rem; margin-top: 2.75rem; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 44rem) { .wege { grid-template-columns: 1fr 1fr; gap: 1.25rem; } }
+  .weg {
+    display: block; text-decoration: none; color: #fff; padding: 1.4rem 1.5rem 1.5rem;
+    border-radius: 1.1rem; background: rgba(255,255,255,.08); border: 2px solid rgba(255,255,255,.18);
+    transition: background .15s ease, border-color .15s ease;
+  }
+  .weg:hover { background: rgba(255,255,255,.14); border-color: rgba(255,255,255,.45); }
+  .weg-kopf { display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-weight: 700; font-size: 1.25rem; line-height: 1.25; }
+  .weg-kopf svg { width: 1.6rem; height: 1.6rem; flex: none; color: var(--gold); }
+  .weg p { margin: .35rem 0 0; color: #c9d6f5; font-size: .95rem; line-height: 1.5; }
+
+  /* Umschalter Privat / Unternehmen */
+  .weiche { display: inline-flex; background: rgba(255,255,255,.12); border-radius: 999px; padding: .3rem; margin: 0 0 2rem; gap: .25rem; max-width: 100%; }
+  .weiche a { color: #fff; text-decoration: none; font-weight: 700; font-size: .95rem; padding: .55rem 1.15rem; border-radius: 999px; white-space: nowrap; }
+  .weiche a:hover { background: rgba(255,255,255,.12); }
+  .weiche a[aria-current="page"] { background: #fff; color: var(--blau); }
+  @media (max-width: 26rem) { .weiche a { padding: .5rem .7rem; font-size: .8rem; } }
+  @media (max-width: 21rem) { .weiche { display: flex; } .weiche a { flex: 1; white-space: normal; text-align: center; line-height: 1.25; } }
+  .mehr-link { display: inline-block; margin-top: 2rem; color: #fff; font-weight: 700; text-decoration: none;
+    border: 2px solid rgba(255,255,255,.55); border-radius: 999px; padding: .65rem 1.3rem; }
+  .mehr-link:hover { background: rgba(255,255,255,.12); border-color: #fff; }
+  /* Die Anruf-Karte: das eine auffällige Element der Seite */
+  .anruf {
+    background: var(--gold);
+    border-radius: 1.25rem 1.25rem 1.25rem .25rem;
+    padding: 1.75rem 1.75rem 1.5rem;
+    color: var(--tinte);
+  }
+  .anruf h2 { margin: 0 0 .25rem; font-size: 1.1rem; font-weight: 700; }
+  @media (max-width: 22rem) { .anruf { padding: 1.4rem 1.25rem 1.25rem; } }
+  .anruf .nummer {
+    display: block;
+    font-size: clamp(1.5rem, 8.5vw, 2.6rem);
+    font-weight: 700;
+    letter-spacing: -.01em;
+    line-height: 1.15;
+    color: var(--tinte);
+    text-decoration: none;
+    margin: .25rem 0 .9rem;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .anruf .nummer:hover { text-decoration: underline; text-decoration-thickness: 3px; }
+  .anruf dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: .1rem 1rem; font-size: .95rem; }
+  .anruf dt { font-weight: 700; }
+  .anruf dd { margin: 0; }
+  .anruf .rueckruf-link { margin: 1.1rem 0 0; border-top: 1px solid rgba(16,24,58,.2); padding-top: 1.1rem; }
+  .anruf .rueckruf-link a {
+    display: inline-block; color: var(--tinte); font-weight: 700; text-decoration: none;
+    border: 2px solid var(--tinte); padding: .6rem 1.2rem; border-radius: 999px;
+  }
+  .anruf .rueckruf-link a:hover { background: var(--tinte); color: var(--gold); }
+  .anruf .rueckruf-link a:focus-visible { outline: 3px solid var(--tinte); outline-offset: 3px; }
+
+  /* Abschnitte */
+  section.block { padding: 3.5rem 0; border-top: 1px solid var(--linie); }
+  h2.titel {
+    font-size: clamp(1.6rem, 3.6vw, 2.1rem);
+    line-height: 1.2; letter-spacing: -.02em;
+    margin: 0 0 .75rem;
+  }
+  .lead { color: var(--grau); margin: 0 0 2rem; max-width: var(--text); }
+
+  /* Wobei ich helfe: als Alltagssituationen formuliert */
+  .situationen { list-style: none; padding: 0; margin: 0; display: grid; gap: 0; }
+  @media (min-width: 48rem) { .situationen { grid-template-columns: 1fr 1fr; column-gap: 3rem; } }
+  .situationen li {
+    padding: 1rem 0 1rem 1.1rem;
+    border-bottom: 1px solid var(--linie);
+    position: relative;
+  }
+  .situationen li::before {
+    content: ""; position: absolute; left: 0; top: 1.35rem;
+    width: .45rem; height: .45rem; border-radius: 50%; background: var(--blau);
+  }
+  .situationen strong { display: block; }
+  .situationen span { color: var(--grau); font-size: .95rem; }
+
+  /* Unternehmen */
+  .firma { background: var(--blau); color: #fff; border-top: 0; }
+  .firma .lead { color: #c9d6f5; }
+  .firma-liste { display: grid; gap: 1.5rem 3rem; margin: 0; }
+  @media (min-width: 48rem) { .firma-liste { grid-template-columns: 1fr 1fr; } }
+  .firma-liste div { border-top: 2px solid rgba(255,255,255,.35); padding-top: .9rem; }
+  .firma-liste dt { font-weight: 700; font-size: 1.1rem; margin-bottom: .2rem; }
+  .firma-liste dd { margin: 0; color: #dde6fb; }
+
+  /* Ablauf: echte Reihenfolge, deshalb nummeriert */
+  .ablauf { list-style: none; counter-reset: schritt; padding: 0; margin: 0; display: grid; gap: 1.75rem; }
+  @media (min-width: 48rem) { .ablauf { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; } }
+  .ablauf li { counter-increment: schritt; }
+  .ablauf li::before {
+    content: counter(schritt);
+    display: inline-grid; place-items: center;
+    width: 2.4rem; height: 2.4rem; border-radius: 50%;
+    background: var(--blau-hell); color: var(--blau);
+    font-weight: 700; margin-bottom: .75rem;
+  }
+  .ablauf h3 { margin: 0 0 .35rem; font-size: 1.15rem; }
+  .ablauf p { margin: 0; color: var(--grau); }
+
+  /* Über mich */
+  .person { display: grid; gap: 2rem; align-items: center; }
+  @media (min-width: 48rem) { .person { grid-template-columns: 14rem 1fr; gap: 3rem; } }
+  .foto {
+    aspect-ratio: 4 / 5; border-radius: 1rem; background: var(--blau-hell);
+    display: grid; place-items: center; color: var(--grau); font-size: .9rem;
+    text-align: center; padding: 1rem; max-width: 14rem;
+    border: 2px dashed var(--linie);
+  }
+  .person p { margin: 0 0 1rem; max-width: var(--text); }
+
+  /* Einsatzgebiet & Kontakt */
+  .zwei { display: grid; gap: 2.5rem; }
+  @media (min-width: 48rem) { .zwei { grid-template-columns: 1fr 1fr; gap: 4rem; } }
+  .orte { margin: 0; color: var(--grau); }
+  .kontakt-liste { margin: 0; display: grid; gap: .9rem; }
+  .kontakt-liste dt { font-size: .9rem; color: var(--grau); }
+  .kontakt-liste dd { margin: 0; font-weight: 700; font-size: 1.1rem; }
+
+  /* Fuß */
+  .fuss { border-top: 1px solid var(--linie); padding: 2rem 0 6rem; font-size: .9rem; color: var(--grau); }
+  @media (min-width: 48rem) { .fuss { padding-bottom: 2rem; } }
+  .fuss .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+  .fuss nav { display: flex; gap: 1.5rem; }
+
+  /* Hinweis: im Aufbau */
+  .aufbau .lead { margin-bottom: 0; }
+  .aufbau-marke { display: inline-block; margin: 0 0 .9rem; padding: .3rem .85rem; border-radius: 999px;
+    background: var(--gold); color: var(--tinte); font-weight: 700; font-size: .85rem; }
+  .aufbau + .block { border-top: 0; padding-top: 0; }
+  /* Rückruf-Formular */
+  .rueckruf-grid { display: grid; gap: 2rem; }
+  @media (min-width: 60rem) { .rueckruf-grid { grid-template-columns: .8fr 1.2fr; gap: 4rem; } }
+  .formular { display: grid; gap: 1.25rem; max-width: 34rem; }
+  .formular label { display: block; font-weight: 700; margin-bottom: .35rem; }
+  .formular .optional { font-weight: 400; color: var(--grau); }
+  .formular input[type="text"], .formular input[type="tel"], .formular textarea {
+    width: 100%; font: inherit; color: var(--tinte);
+    padding: .75rem .9rem; border: 2px solid var(--linie); border-radius: .6rem; background: #fff;
+  }
+  .formular textarea { min-height: 6.5rem; resize: vertical; }
+  .formular input:focus, .formular textarea:focus { outline: none; border-color: var(--blau); box-shadow: 0 0 0 3px var(--blau-hell); }
+  .formular fieldset { border: 0; padding: 0; margin: 0; }
+  .formular legend { font-weight: 700; margin-bottom: .5rem; padding: 0; }
+  .zeiten { display: flex; flex-wrap: wrap; gap: .6rem; }
+  .zeiten label { font-weight: 400; margin: 0; display: flex; align-items: center; gap: .5rem;
+    border: 2px solid var(--linie); border-radius: 999px; padding: .5rem 1rem; background: #fff; cursor: pointer; }
+  .zeiten input { width: 1.15rem; height: 1.15rem; accent-color: var(--blau); margin: 0; }
+  .zeiten label:has(input:checked) { border-color: var(--blau); background: var(--blau-hell); }
+  .zeiten label:has(input:focus-visible) { outline: 3px solid var(--tinte); outline-offset: 2px; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .absenden {
+    justify-self: start; font: inherit; font-weight: 700; cursor: pointer;
+    background: var(--blau); color: #fff; border: 0; border-radius: 999px; padding: .85rem 1.6rem;
+  }
+  .absenden:hover { background: #08328a; }
+  .formular .klein { font-size: .85rem; color: var(--grau); margin: 0; }
+
+  /* Fester Anruf-Knopf auf dem Handy */
+  .handy-anruf {
+    position: fixed; left: 1rem; right: 1rem; bottom: 1rem;
+    display: flex; justify-content: center; align-items: center; gap: .6rem;
+    background: var(--gold); color: var(--tinte);
+    font-weight: 700; font-size: 1.1rem; text-decoration: none;
+    padding: 1rem; border-radius: 999px;
+    box-shadow: 0 6px 18px rgba(16,24,58,.25);
+  }
+  .handy-anruf:active { background: var(--gold-tief); }
+  .handy-anruf svg { width: 1.3rem; height: 1.3rem; }
+  @media (min-width: 48rem) { .handy-anruf { display: none; } }
+  /* Mit JavaScript erscheint der Knopf erst, wenn die gelbe Karte aus dem Bild gescrollt ist */
+  .js .handy-anruf { transform: translateY(160%); visibility: hidden; transition: transform .25s ease, visibility 0s linear .25s; }
+  .js .handy-anruf.sichtbar { transform: none; visibility: visible; transition: transform .25s ease; }
+  @media (prefers-reduced-motion: reduce) { .js .handy-anruf, .js .handy-anruf.sichtbar { transition: none; } }
+  .handy-anruf.rueckruf-modus svg { display: none; }
 </style>
 </head>
 <body>
-<main>
+
+<header class="kopf">
   <div class="wrap">
-    <div class="marke"><img src="/favicon.svg" width="40" height="40" alt=""><div>Marius Lange <span>IT-Services</span></div></div>
-    <h1>Hier entsteht gerade meine neue Website.</h1>
-    <p>Bis es so weit ist, erreichen Sie mich ganz einfach telefonisch oder per E‑Mail – für Technikhilfe zu Hause und IT für kleine Betriebe in Gotha und Umgebung.</p>
-    <div class="kontakt">
-      <a class="tel" href="tel:+4915129880857">01512 9880857</a>
-      <a class="mail" href="mailto:kontakt@it-gotha.de">kontakt@it-gotha.de</a>
-    </div>
+    <a class="marke" href="/"><img src="/favicon.svg" width="30" height="30" alt=""><span>Marius Lange <span>IT-Services</span></span></a>
+    <a class="kopf-link" href="#rueckruf">Rückruf vereinbaren</a>
   </div>
+</header>
+
+<main>
+  <section class="einstieg">
+    <div class="wrap">
+      <div class="einstieg-text">
+        <h1>Technik soll den Alltag erleichtern, nicht erschweren.</h1>
+        <p class="unter">Ich unterstütze Sie dabei, in Ruhe und Schritt für Schritt – zu Hause oder in Ihrem Betrieb, in Gotha und Umgebung.</p>
+        <div class="einstieg-kontakt">
+          <a class="gold-tel" href="tel:+4915129880857"><small>Rufen Sie einfach an</small><strong>01512 9880857</strong></a>
+          <div class="zeiten-info">Mo – Fr 9 bis 18 Uhr, Sa 10 bis 15 Uhr<br>oder <a href="#rueckruf">Rückruf vereinbaren</a></div>
+        </div>
+      </div>
+
+      <nav class="wege" aria-label="Angebot wählen">
+        <a class="weg" href="#aufbau">
+          <div class="weg-kopf">Für mich <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div>
+          <p>Computer, Smartphone, Drucker, WLAN und Kameras – eingerichtet, repariert und in Ruhe erklärt.</p>
+        </a>
+        <a class="weg" href="/unternehmen">
+          <div class="weg-kopf">Für mein Unternehmen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+          <p>Netzwerk, Telefonie, laufende Betreuung und Software für Praxen, Gastronomie, Handwerk und Büros.</p>
+        </a>
+      </nav>
+    </div>
+  </section>
+
+  <section class="block aufbau" id="aufbau" aria-labelledby="t-aufbau">
+    <div class="wrap">
+      <p class="aufbau-marke">Im Aufbau</p>
+      <h2 class="titel" id="t-aufbau">Hier entsteht gerade mehr.</h2>
+      <p class="lead">Ausführliche Infos zu meinen Leistungen folgen in Kürze. Bis dahin erreichen Sie mich ganz einfach telefonisch unter <a href="tel:+4915129880857">01512 9880857</a>, per E-Mail an <a href="mailto:kontakt@it-gotha.de" style="white-space:nowrap">kontakt@it-gotha.de</a> oder über das Rückruf-Formular.</p>
+    </div>
+  </section>
+
+  <section class="block" id="rueckruf" aria-labelledby="t-rueckruf">
+    <div class="wrap rueckruf-grid">
+      <div>
+        <h2 class="titel" id="t-rueckruf">Lieber zurückgerufen werden?</h2>
+        <p class="lead">Hinterlassen Sie Ihren Namen und Ihre Nummer. Ich melde mich zu der Zeit, die Ihnen am besten passt.</p>
+      </div>
+      <form class="formular" method="post" action="https://rueckruf.broad-limit-44bb.workers.dev/">
+        <input type="hidden" name="art" value="Privat">
+        <div>
+          <label for="f-name">Ihr Name</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required maxlength="100">
+        </div>
+        <div>
+          <label for="f-telefon">Ihre Telefonnummer</label>
+          <input id="f-telefon" name="telefon" type="tel" autocomplete="tel" inputmode="tel" required maxlength="30" pattern="[+0-9 ()/.\-]{6,30}">
+        </div>
+        <fieldset>
+          <legend>Wann passt es Ihnen am besten?</legend>
+          <div class="zeiten">
+            <label><input type="radio" name="zeit" value="Vormittag"> Vormittags</label>
+            <label><input type="radio" name="zeit" value="Nachmittag"> Nachmittags</label>
+            <label><input type="radio" name="zeit" value="egal" checked> Egal</label>
+          </div>
+        </fieldset>
+        <div>
+          <label for="f-anliegen">Worum geht es? <span class="optional">(freiwillig)</span></label>
+          <textarea id="f-anliegen" name="anliegen" maxlength="1500"></textarea>
+        </div>
+        <div class="hp" aria-hidden="true">
+          <label for="f-website">Bitte leer lassen</label>
+          <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+        <button class="absenden" type="submit">Rückruf anfordern</button>
+        <p class="klein">Ihre Angaben nutze ich nur für den Rückruf. Mehr dazu in der <a href="/datenschutz">Datenschutzerklärung</a>.</p>
+      </form>
+    </div>
+  </section>
+
 </main>
-<footer>
+
+<footer class="fuss">
   <div class="wrap">
     <span>© 2026 Marius Lange IT-Services</span>
-    <nav aria-label="Rechtliches"><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a></nav>
+    <nav aria-label="Rechtliches">
+      <a href="/impressum">Impressum</a>
+      <a href="/datenschutz">Datenschutz</a>
+    </nav>
   </div>
 </footer>
+
+<a class="handy-anruf" href="tel:+4915129880857" aria-label="Jetzt anrufen: 01512 9880857">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+  <span class="handy-text">Jetzt anrufen</span>
+</a>
+
+<script>
+  (function () {
+    var karte = document.querySelector('.einstieg-kontakt');
+    var knopf = document.querySelector('.handy-anruf');
+    if (!knopf) return;
+
+    // Außerhalb der Erreichbarkeit (Mo–Fr 9–18, Sa 10–15 Uhr, deutsche Zeit) Rückruf statt Anruf anbieten
+    function erreichbar() {
+      try {
+        var teile = new Intl.DateTimeFormat('en-US', { timeZone: 'Europe/Berlin', weekday: 'short', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(new Date());
+        var w = {}; teile.forEach(function (t) { w[t.type] = t.value; });
+        var min = parseInt(w.hour, 10) * 60 + parseInt(w.minute, 10);
+        if (['Mon', 'Tue', 'Wed', 'Thu', 'Fri'].indexOf(w.weekday) > -1) return min >= 540 && min < 1080;
+        if (w.weekday === 'Sat') return min >= 600 && min < 900;
+        return false;
+      } catch (err) { return true; }
+    }
+    function modusSetzen() {
+      var text = knopf.querySelector('.handy-text');
+      if (erreichbar()) {
+        knopf.href = 'tel:+4915129880857';
+        knopf.setAttribute('aria-label', 'Jetzt anrufen: 01512 9880857');
+        text.textContent = 'Jetzt anrufen';
+        knopf.classList.remove('rueckruf-modus');
+      } else {
+        knopf.href = '#rueckruf';
+        knopf.setAttribute('aria-label', 'Rückruf vereinbaren');
+        text.textContent = 'Rückruf vereinbaren';
+        knopf.classList.add('rueckruf-modus');
+      }
+    }
+    modusSetzen();
+    setInterval(modusSetzen, 60000);
+    if (!karte || !('IntersectionObserver' in window)) { knopf.classList.add('sichtbar'); return; }
+    new IntersectionObserver(function (eintraege) {
+      var e = eintraege[0];
+      knopf.classList.toggle('sichtbar', !e.isIntersecting && e.boundingClientRect.top < 0);
+    }).observe(karte);
+  })();
+</script>
 </body>
 </html>
