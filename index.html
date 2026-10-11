@@ -162,6 +162,34 @@
   .fuss .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
   .fuss nav { display: flex; gap: 1.5rem; }
 
+  /* Rückruf-Formular */
+  .rueckruf-grid { display: grid; gap: 2rem; }
+  @media (min-width: 60rem) { .rueckruf-grid { grid-template-columns: .8fr 1.2fr; gap: 4rem; } }
+  .formular { display: grid; gap: 1.25rem; max-width: 34rem; }
+  .formular label { display: block; font-weight: 700; margin-bottom: .35rem; }
+  .formular .optional { font-weight: 400; color: var(--grau); }
+  .formular input[type="text"], .formular input[type="tel"], .formular textarea {
+    width: 100%; font: inherit; color: var(--tinte);
+    padding: .75rem .9rem; border: 2px solid var(--linie); border-radius: .6rem; background: #fff;
+  }
+  .formular textarea { min-height: 6.5rem; resize: vertical; }
+  .formular input:focus, .formular textarea:focus { outline: none; border-color: var(--tanne); box-shadow: 0 0 0 3px var(--tanne-hell); }
+  .formular fieldset { border: 0; padding: 0; margin: 0; }
+  .formular legend { font-weight: 700; margin-bottom: .5rem; padding: 0; }
+  .zeiten { display: flex; flex-wrap: wrap; gap: .6rem; }
+  .zeiten label { font-weight: 400; margin: 0; display: flex; align-items: center; gap: .5rem;
+    border: 2px solid var(--linie); border-radius: 999px; padding: .5rem 1rem; background: #fff; cursor: pointer; }
+  .zeiten input { width: 1.15rem; height: 1.15rem; accent-color: var(--tanne); margin: 0; }
+  .zeiten label:has(input:checked) { border-color: var(--tanne); background: var(--tanne-hell); }
+  .zeiten label:has(input:focus-visible) { outline: 3px solid var(--tinte); outline-offset: 2px; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .absenden {
+    justify-self: start; font: inherit; font-weight: 700; cursor: pointer;
+    background: var(--tanne); color: #fff; border: 0; border-radius: 999px; padding: .85rem 1.6rem;
+  }
+  .absenden:hover { background: #163a2f; }
+  .formular .klein { font-size: .85rem; color: var(--grau); margin: 0; }
+
   /* Fester Anruf-Knopf auf dem Handy */
   .handy-anruf {
     position: fixed; left: 1rem; right: 1rem; bottom: 1rem;
@@ -236,12 +264,49 @@
   <section class="block" id="ablauf" aria-labelledby="t-ablauf">
     <div class="wrap">
       <h2 class="titel" id="t-ablauf">So läuft es ab</h2>
-      <p class="lead">Unkompliziert, ohne Formulare.</p>
+      <p class="lead">Unkompliziert und persönlich.</p>
       <ol class="ablauf">
-        <li><h3>Anrufen</h3><p>Sie schildern kurz, worum es geht. Oft lässt sich schon am Telefon einschätzen, was zu tun ist.</p></li>
+        <li><h3>Anrufen</h3><p>Sie rufen an oder fordern einen Rückruf an und schildern kurz, worum es geht. Oft lässt sich schon am Telefon einschätzen, was zu tun ist.</p></li>
         <li><h3>Termin vereinbaren</h3><p>Wir finden einen Termin, der Ihnen passt, bei Ihnen zu Hause oder in Ihrem Betrieb.</p></li>
         <li><h3>Gemeinsam lösen</h3><p>Ich behebe das Problem und zeige Ihnen, wie Sie künftig selbst klarkommen.</p></li>
       </ol>
+    </div>
+  </section>
+
+  <section class="block" id="rueckruf" aria-labelledby="t-rueckruf">
+    <div class="wrap rueckruf-grid">
+      <div>
+        <h2 class="titel" id="t-rueckruf">Lieber zurückgerufen werden?</h2>
+        <p class="lead">Hinterlassen Sie Ihren Namen und Ihre Nummer. Ich melde mich zu der Zeit, die Ihnen am besten passt.</p>
+      </div>
+      <form class="formular" method="post" action="https://rueckruf.broad-limit-44bb.workers.dev/">
+        <div>
+          <label for="f-name">Ihr Name</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required maxlength="100">
+        </div>
+        <div>
+          <label for="f-telefon">Ihre Telefonnummer</label>
+          <input id="f-telefon" name="telefon" type="tel" autocomplete="tel" inputmode="tel" required maxlength="30" pattern="[+0-9 ()/.\-]{6,30}">
+        </div>
+        <fieldset>
+          <legend>Wann passt es Ihnen am besten?</legend>
+          <div class="zeiten">
+            <label><input type="radio" name="zeit" value="Vormittag"> Vormittags</label>
+            <label><input type="radio" name="zeit" value="Nachmittag"> Nachmittags</label>
+            <label><input type="radio" name="zeit" value="egal" checked> Egal</label>
+          </div>
+        </fieldset>
+        <div>
+          <label for="f-anliegen">Worum geht es? <span class="optional">(freiwillig)</span></label>
+          <textarea id="f-anliegen" name="anliegen" maxlength="1500"></textarea>
+        </div>
+        <div class="hp" aria-hidden="true">
+          <label for="f-website">Bitte leer lassen</label>
+          <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+        <button class="absenden" type="submit">Rückruf anfordern</button>
+        <p class="klein">Ihre Angaben nutze ich nur für den Rückruf. Mehr dazu in der <a href="/datenschutz">Datenschutzerklärung</a>.</p>
+      </form>
     </div>
   </section>
 
