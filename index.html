@@ -228,16 +228,12 @@
   /* Wobei ich helfe: als Alltagssituationen formuliert */
   .situationen { list-style: none; padding: 0; margin: 0; display: grid; gap: 0; }
   @media (min-width: 48rem) { .situationen { grid-template-columns: 1fr 1fr; column-gap: 3rem; } }
-  .situationen li {
-    padding: 1rem 0 1rem 1.1rem;
-    border-bottom: 1px solid var(--linie);
-    position: relative;
+  .situationen li { padding: .8rem 0 .8rem 1.2rem; }
+  .situationen strong { display: block; position: relative; }
+  .situationen strong::before {
+    content: ""; position: absolute; left: -1.2rem; top: 50%; transform: translateY(-50%);
+    width: .5rem; height: .5rem; border-radius: 50%; background: var(--blau);
   }
-  .situationen li::before {
-    content: ""; position: absolute; left: 0; top: 1.35rem;
-    width: .45rem; height: .45rem; border-radius: 50%; background: var(--blau);
-  }
-  .situationen strong { display: block; }
   .situationen span { color: var(--grau); font-size: .95rem; }
 
   /* Unternehmen */
