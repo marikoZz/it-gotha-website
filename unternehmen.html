@@ -243,6 +243,7 @@
     border: 2px dashed var(--linie);
   }
   .person p { margin: 0 0 1rem; max-width: var(--text); }
+  @media (max-width: 47.99rem) { .foto { max-width: 9rem; } }
 
   /* Einsatzgebiet & Kontakt */
   .zwei { display: grid; gap: 2.5rem; }
@@ -387,11 +388,35 @@
     </div>
   </section>
 
+  <section class="block" id="ablauf" aria-labelledby="t-ablauf">
+    <div class="wrap">
+      <h2 class="titel" id="t-ablauf">So läuft es ab</h2>
+      <p class="lead">Unkompliziert und persönlich.</p>
+      <ol class="ablauf">
+        <li><h3>Kurz sprechen</h3><p>Sie rufen an oder fordern einen Rückruf an und schildern, wo es hakt oder was Sie vorhaben.</p></li>
+        <li><h3>Vor Ort ansehen</h3><p>Ich schaue mir Ihren Betrieb an und sage Ihnen ehrlich, was nötig ist und was es kostet.</p></li>
+        <li><h3>Umsetzen und betreuen</h3><p>Ich richte alles ein, möglichst ohne Ihren Betrieb zu stören, und bleibe auf Wunsch Ihr Ansprechpartner.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="ueber-mich" aria-labelledby="t-person">
+    <div class="wrap person">
+      <!-- TODO: Platzhalter durch <img src="/marius.jpg" alt="Marius Lange"> ersetzen -->
+      <div class="foto" role="img" aria-label="Foto folgt">Foto folgt</div>
+      <div>
+        <h2 class="titel" id="t-person">Ihr Ansprechpartner</h2>
+        <p>Ich bin Marius Lange und kümmere mich persönlich um Ihr Anliegen, vom ersten Anruf bis zur Lösung. Computer begleiten mich, seit ich acht Jahre alt bin. Heute studiere ich Angewandte Informatik und bringe zwei Jahre Erfahrung aus der Telekommunikationsbranche mit.</p>
+        <p>Für Ihren Betrieb heißt das: ein fester Ansprechpartner aus der Region, der Ihre Technik kennt und schnell vor Ort ist.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="block aufbau" id="aufbau" aria-labelledby="t-aufbau">
     <div class="wrap">
       <p class="aufbau-marke">Im Aufbau</p>
       <h2 class="titel" id="t-aufbau">Hier entsteht gerade noch mehr.</h2>
-      <p class="lead">Weitere Infos, zum Beispiel Referenzen und Betreuungspakete, folgen in Kürze. Bis dahin erreichen Sie mich ganz einfach telefonisch unter <a href="tel:+4915129880857">01512 9880857</a>, per E-Mail an <a href="mailto:kontakt@it-gotha.de" style="white-space:nowrap">kontakt@it-gotha.de</a> oder über das Rückruf-Formular.</p>
+      <p class="lead">Häufige Fragen und Referenzen folgen in Kürze.</p>
     </div>
   </section>
 
@@ -430,6 +455,23 @@
         <button class="absenden" type="submit">Rückruf anfordern</button>
         <p class="klein">Ihre Angaben nutze ich nur für den Rückruf. Mehr dazu in der <a href="/datenschutz">Datenschutzerklärung</a>.</p>
       </form>
+    </div>
+  </section>
+
+  <section class="block" id="kontakt" aria-labelledby="t-kontakt">
+    <div class="wrap zwei">
+      <div>
+        <h2 class="titel">Einsatzgebiet</h2>
+        <p class="orte">Gotha und Umgebung, unter anderem Waltershausen, Friedrichroda, Ohrdruf, Bad Tabarz, Tambach-Dietharz, Drei Gleichen, Nesse-Apfelstädt und Nessetal.</p>
+      </div>
+      <div>
+        <h2 class="titel" id="t-kontakt">Kontakt</h2>
+        <dl class="kontakt-liste">
+          <div><dt>Telefon</dt><dd><a href="tel:+4915129880857">01512 9880857</a></dd></div>
+          <div><dt>E-Mail</dt><dd><a href="mailto:kontakt@it-gotha.de">kontakt@it-gotha.de</a></dd></div>
+          <div><dt>Erreichbar</dt><dd>Mo – Fr 9 bis 18 Uhr, Sa 10 bis 15 Uhr</dd></div>
+        </dl>
+      </div>
     </div>
   </section>
 
