@@ -111,6 +111,42 @@
   .weg-kopf svg { width: 1.6rem; height: 1.6rem; flex: none; color: var(--gold); }
   .weg p { margin: .35rem 0 0; color: #c9d6f5; font-size: .95rem; line-height: 1.5; }
 
+  /* Handy: der komplette blaue Einstieg passt auf einen Bildschirm */
+  @media (max-width: 43.99rem) {
+    .einstieg { min-height: calc(100svh - 4rem); padding: 1.25rem 0 1.5rem; justify-content: space-between; }
+    .einstieg > .wrap { display: flex; flex-direction: column; justify-content: space-between; flex: 1; gap: 1.5rem; }
+    h1 { font-size: clamp(1.75rem, 8.4vw, 2.2rem); margin-bottom: .8rem; }
+    .einstieg p.unter { font-size: 1rem; line-height: 1.5; margin-bottom: 1.25rem; }
+    .gold-tel { padding: .6rem 1.1rem .65rem; }
+    .gold-tel strong { font-size: 1.45rem; }
+    .zeiten-info { font-size: .85rem; }
+    .wege { margin-top: 0; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: .6rem; }
+    .einstieg > .wrap { width: 100%; min-width: 0; }
+    .weg-kopf { overflow-wrap: anywhere; hyphens: auto; }
+    .weg { padding: .85rem .9rem; border-radius: .9rem; display: flex; flex-direction: column; justify-content: center; }
+    .weg-kopf { font-size: .95rem; gap: .4rem; align-items: flex-start; }
+    .weg-kopf svg { width: 1.2rem; height: 1.2rem; margin-top: .05rem; }
+    .weg p { display: none; }
+  }
+  @media (max-width: 43.99rem) and (min-height: 800px) {
+    .einstieg > .wrap { justify-content: center; gap: 2.25rem; }
+    h1 { font-size: clamp(1.9rem, 8.6vw, 2.3rem); }
+    .einstieg p.unter { font-size: 1.05rem; }
+    .wege { grid-template-columns: minmax(0, 1fr); gap: .75rem; }
+    .weg { padding: 1rem 1.15rem 1.05rem; }
+    .weg-kopf { font-size: 1.1rem; align-items: center; }
+    .weg p { display: block; font-size: .88rem; line-height: 1.45; margin-top: .25rem; }
+  }
+  @media (max-width: 22rem) {
+    .gold-tel strong { font-size: 1.25rem; }
+    .weg-kopf { font-size: .88rem; }
+  }
+  @media (max-width: 43.99rem) and (max-height: 700px) {
+    h1 { font-size: 1.6rem; }
+    .einstieg p.unter { font-size: .92rem; margin-bottom: 1rem; }
+    .einstieg > .wrap { gap: 1rem; }
+  }
+
   /* Umschalter Privat / Unternehmen */
   .weiche { display: inline-flex; background: rgba(255,255,255,.12); border-radius: 999px; padding: .3rem; margin: 0 0 2rem; gap: .25rem; max-width: 100%; }
   .weiche a { color: #fff; text-decoration: none; font-weight: 700; font-size: .95rem; padding: .55rem 1.15rem; border-radius: 999px; white-space: nowrap; }
@@ -226,6 +262,18 @@
   .fuss .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
   .fuss nav { display: flex; gap: 1.5rem; }
 
+  /* Preise */
+  .preise-grid { display: grid; gap: 2rem; grid-template-columns: minmax(0, 1fr); align-items: start; }
+  @media (min-width: 60rem) { .preise-grid { grid-template-columns: .8fr 1.2fr; gap: 4rem; } }
+  .preisliste { margin: 0; background: #fff; border: 1px solid var(--linie); border-radius: 1.1rem; overflow: hidden; }
+  .preisliste div { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 1.1rem 1.4rem; border-top: 1px solid var(--linie); }
+  .preisliste div:first-child { border-top: 0; background: var(--blau); color: #fff; }
+  .preisliste dt { font-weight: 600; }
+  .preisliste dd { margin: 0; font-weight: 700; white-space: nowrap; text-align: right; }
+  .preisliste div:first-child dd { color: var(--gold); font-size: 1.6rem; letter-spacing: -.01em; }
+  .preise-hinweis { margin: .9rem 0 0; color: var(--grau); font-size: .9rem; }
+  .preise-grid .lead { margin-bottom: 0; }
+  @media (max-width: 59.99rem) { .preise-grid { gap: 1.5rem; } }
   /* Hinweis: im Aufbau */
   .aufbau .lead { margin-bottom: 0; }
   .aufbau-marke { display: inline-block; margin: 0 0 .9rem; padding: .3rem .85rem; border-radius: 999px;
@@ -300,7 +348,7 @@
       </div>
 
       <nav class="wege" aria-label="Angebot wählen">
-        <a class="weg" href="#aufbau">
+        <a class="weg" href="#preise">
           <div class="weg-kopf">Für mein Unternehmen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></div>
           <p>Netzwerk, Telefonie, laufende Betreuung und Software – damit Ihr Betrieb einfach läuft.</p>
         </a>
@@ -312,10 +360,26 @@
     </div>
   </section>
 
+  <section class="block" id="preise" aria-labelledby="t-preise">
+    <div class="wrap preise-grid">
+      <div>
+        <h2 class="titel" id="t-preise">Preise</h2>
+        <p class="lead">Klare Stundensätze, ehrliche Einschätzung vorab. Für eine laufende Betreuung erstelle ich Ihnen gern ein individuelles Angebot.</p>
+      </div>
+      <div>
+        <dl class="preisliste">
+          <div><dt>Pro Stunde</dt><dd>49 €</dd></div>
+          <div><dt>Anfahrt</dt><dd>je nach Entfernung</dd></div><div><dt>Laufende Betreuung</dt><dd>auf Anfrage</dd></div>
+        </dl>
+        <p class="preise-hinweis">Alle Preise sind Endpreise.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="block aufbau" id="aufbau" aria-labelledby="t-aufbau">
     <div class="wrap">
       <p class="aufbau-marke">Im Aufbau</p>
-      <h2 class="titel" id="t-aufbau">Hier entsteht gerade mehr.</h2>
+      <h2 class="titel" id="t-aufbau">Hier entsteht gerade noch mehr.</h2>
       <p class="lead">Ausführliche Infos zu meinen Leistungen für Betriebe folgen in Kürze. Bis dahin erreichen Sie mich ganz einfach telefonisch unter <a href="tel:+4915129880857">01512 9880857</a>, per E-Mail an <a href="mailto:kontakt@it-gotha.de" style="white-space:nowrap">kontakt@it-gotha.de</a> oder über das Rückruf-Formular.</p>
     </div>
   </section>
